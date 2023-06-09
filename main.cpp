@@ -18,9 +18,14 @@ int getNumberOfJumps(int step, int maxJump = 3) {
 }
 
 int main() {
-    const unsigned int stairRung = 4;
-    const unsigned int maxJump = 2;
+    int stairRungList[] = { 3, 5, 7,9 };
+    int maxJumpList[] = { 2, 2, 3, 2 };
 
-    int result = getNumberOfJumps(stairRung, maxJump);
-    cout << "Result is: " << result << endl;
+    for (int i = 0; i < (sizeof(stairRungList) / sizeof(*stairRungList)); ++i) {
+        int stairRung = stairRungList[i];
+        int maxJump = maxJumpList[i];
+        int result = getNumberOfJumps(stairRung, maxJump);
+        printf("Stair rung: %i, max jump: %i. Result is: %i\n", stairRung, maxJump, result);
+    }
+
 }
